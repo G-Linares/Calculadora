@@ -15,7 +15,7 @@
 }
   .calculadora {
     width: 400px;
-    background-color:white;
+    background-color:rgb(185, 185, 185);
     padding: 50px 30px;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -32,7 +32,7 @@
     padding: 15px 10px;
     text-align: right;
     border: black;
-    background-color: transparent;
+    background-color: rgb(231, 231, 231);
     color: black;
     font-size: 35px;
   }
