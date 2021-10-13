@@ -1,13 +1,13 @@
-let equal_pressed = 0;
+let igual_presionado = 0;
 //cacho el input que presione
 let button_input = document.querySelectorAll(".input-button");
 
 let input = document.getElementById("input");
 let igual = document.getElementById("igual");
 //boton de DEL
-let borrarTodo = document.getElementById("borrarTodo");
+let borrar = document.getElementById("borrarTodo");
 //boton de AC
-let borrar = document.getElementById("borrar");
+let borrarTodo = document.getElementById("borrar");
 
 window.onload = () => {
   input.value = "";
@@ -15,9 +15,9 @@ window.onload = () => {
 //ingreso a cada clase con el forEach
 button_input.forEach((button_class) => {
   button_class.addEventListener("click", () => {
-    if (equal_pressed == 1) {
+    if (igual_presionado == 1) {
       input.value = "";
-      equal_pressed = 0;
+      igual_presionado = 0;
     }
     //se ve el valor de cada signo
     input.value += button_class.value;
@@ -25,26 +25,18 @@ button_input.forEach((button_class) => {
 });
 //resolver el input con el signo de igual
 igual.addEventListener("click", () => {
-  equal_pressed = 1;
+  igual_presionado = 1;
   //mejor asigno el String de value para poderle hacer eval();
   let inp_val = input.value;
-   /*
-  let solution = eval(inp_val);
-
-  if (Number.isInteger(solution)) {
-    input.value = solution;
-  } else {
-    alert("No se reconoce operacion");
-  }
-   */
+  
   try {
-    //evaluar el input que ingresas
+    //evaluar el input que ingresas aqui se hace cualquier operacion
     let solution = eval(inp_val);
-    
+
+    input.value = solution;
+
     //Verdadero para numeros naturales
     //falso para decimales
-    input.value = solution;
-
     if (Number.isInteger(solution)) {
       input.value = solution;
     } else {
@@ -57,11 +49,12 @@ igual.addEventListener("click", () => {
   }
  
 });
-//borrar todo
-borrarTodo.addEventListener("click", () => {
+
+//quitar solo 1
+borrar.addEventListener("click", () => {
   input.value = "";
 });
-//le quito
-borrar.addEventListener("click", () => {
+//borrar todo
+borrarTodo.addEventListener("click", () => {
   input.value = input.value.substr(0, input.value.length - 1);
 });

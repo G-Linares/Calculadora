@@ -13,9 +13,9 @@
     );
 
 }
-  .calculator {
+  .calculadora {
     width: 400px;
-    background-color:rgb(194, 194, 194);
+    background-color:white;
     padding: 50px 30px;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -37,7 +37,7 @@
     font-size: 35px;
   }
   .display input::placeholder {
-    color: whitesmoke;
+    color: rgb(95, 95, 95);
   }
   .buttons {
     display: grid;
@@ -47,7 +47,7 @@
   }
   .buttons input[type="button"] {
     font-size: 20px;
-    /* font-family: 'Darker Grotesque', sans-serif; (Chance y lo ocupo despues */
+    /* font-family: 'Darker Grotesque', sans-serif; Chance y lo ocupo despues */
     font-family: 'Roboto Mono', sans-serif;
     padding: 17px;
     background-color: transparent;
@@ -60,7 +60,6 @@
     box-shadow: 0 2px 6px black;
   }
   input[type="button"]#igual {
-    grid-row: span 2;
     background-color: #FF5733;
   }
   input[type="button"][value="0"] {
