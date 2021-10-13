@@ -3,9 +3,12 @@ let equal_pressed = 0;
 let button_input = document.querySelectorAll(".input-button");
 
 let input = document.getElementById("input");
-let equal = document.getElementById("equal");
-let clear = document.getElementById("clear");
-let erase = document.getElementById("erase");
+let igual = document.getElementById("igual");
+//boton de DEL
+let borrarTodo = document.getElementById("borrarTodo");
+//boton de AC
+let borrar = document.getElementById("borrar");
+
 window.onload = () => {
   input.value = "";
 };
@@ -21,29 +24,44 @@ button_input.forEach((button_class) => {
   });
 });
 //resolver el input con el signo de igual
-equal.addEventListener("click", () => {
+igual.addEventListener("click", () => {
   equal_pressed = 1;
+  //mejor asigno el String de value para poderle hacer eval();
   let inp_val = input.value;
+   /*
+  let solution = eval(inp_val);
+
+  if (Number.isInteger(solution)) {
+    input.value = solution;
+  } else {
+    alert("No se reconoce operacion");
+  }
+   */
   try {
     //evaluar el input que ingresas
     let solution = eval(inp_val);
+    
     //Verdadero para numeros naturales
     //falso para decimales
+    input.value = solution;
+
     if (Number.isInteger(solution)) {
       input.value = solution;
     } else {
       input.value = solution.toFixed(2);
     }
+    
   } catch (err) {
     //Si ingresan un numero invalido
-    alert("Invalid Input");
+    input.value ="No se puede";
   }
+ 
 });
-//limpiar input
-clear.addEventListener("click", () => {
+//borrar todo
+borrarTodo.addEventListener("click", () => {
   input.value = "";
 });
-//borrar uno
-erase.addEventListener("click", () => {
+//le quito
+borrar.addEventListener("click", () => {
   input.value = input.value.substr(0, input.value.length - 1);
 });
