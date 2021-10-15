@@ -4,9 +4,9 @@ let button_input = document.querySelectorAll(".input-button");
 
 let input = document.getElementById("input");
 let igual = document.getElementById("igual");
-//boton de DEL
-let borrar = document.getElementById("borrarTodo");
 //boton de AC
+let borrar = document.getElementById("borrarTodo");
+//boton de DEL
 let borrarTodo = document.getElementById("borrar");
 
 window.onload = () => {
